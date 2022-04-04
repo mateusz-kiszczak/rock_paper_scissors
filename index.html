@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section id="main-section">
+            <h1>Rock / Paper / Scissors</h1>
+            <section id="score-section">
+                <h2 class="section-header-two">Score</h2>
+                <p id="player-score">&#x1f642; You: <span>0</span></p>
+                <p id="computer-score">&#x1f4bb; Computer: <span>0</span></p>
+            </section>
+            <section id="game-section">
+                <h2 class="section-header-two">Game area</h2>
+                <span id="player-hand" class="game-hand player-hand-transform">&#x1F44A;</span>
+                <span id="between-hands">vs</span>
+                <span id="computer-hand" class="game-hand computer-hand-transform">&#x1F44A;</span>
+            </section>
+            <section id="moves-section">
+                <h2 class="section-header-two">Choose your move</h2>
+                <div id="buttons-container">
+                    <button class="game-button" value="rock">&#x270A;</button>
+                    <button class="game-button" value="paper">&#x270B;</button>
+                    <button class="game-button" value="scissors">&#x1F91E;</button>
+                </div>
+                <div id="buttons-descr-container">
+                    <p class="button-description">Rock</p>
+                    <p class="button-description">Paper</p>
+                    <p class="button-description">Scissors</p>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

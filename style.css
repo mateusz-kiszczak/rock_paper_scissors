@@ -1,0 +1,412 @@
+/* 1. Global */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+
+/* 2. Typography */
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2,
+.button-description {
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.button-description {
+    font-size: 1.125rem;
+}
+
+@media only screen and (min-width: 435px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    html {
+        font-size: 22px;
+    }
+}
+
+
+/* 3. Modules */
+
+/* Moves section */
+
+#moves-section {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "buttonsContainer"
+    "butDescrContainer";
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 8px;
+}
+
+#buttons-container,
+#buttons-descr-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+#buttons-container {
+    grid-area: buttonsContainer;
+}
+
+#buttons-descr-container {
+    grid-area: butDescrContainer;
+}
+
+.game-button,
+.button-description {
+    place-self: center;
+}
+
+.game-button {
+    border: 3px solid hsl(26, 70%, 50%);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2.25em;
+    font-size: 2rem;
+    padding-bottom: 5px;
+    transform: rotate(-90deg) scaleY(-1);
+    transition: all 200ms ease-out;
+    width: 2.25em;
+}
+
+.game-button:last-of-type {
+    transform: rotate(90deg);
+}
+
+.game-button:hover {
+    background-color: hsl(119, 80%, 80%);
+    border: 3px solid hsl(119, 80%, 30%);
+}
+
+.game-button:focus {
+    box-shadow: 0px 0px 2px 3px hsl(119, 80%, 50%);
+    outline: none;
+}
+
+.game-button:active {
+    background-color: hsl(119, 80%, 20%);
+    box-shadow: none;
+}
+
+.game-button:disabled {
+    cursor: not-allowed;
+    border: 3px solid hsl(26, 0%, 50%);
+}
+
+
+/* 4. Page */
+
+body {
+    background-color: hsl(250, 50%, 30%);
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+    ". mainItem .";
+    grid-template-columns: auto minmax(310px, 700px) auto;
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+#main-section {
+    color: hsl(250, 100%, 95%);
+    display: grid;
+    grid-area: mainItem;
+    grid-row-gap: 32px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding: 32px 20px 32px 16px;
+}
+
+#main-section > h1 {
+    text-shadow: 3px 3px hsl(250, 100%, 10%);
+}
+
+#score-section,
+#game-section,
+#moves-section {
+    background-color: hsl(250, 100%, 10%);
+    border: 2px solid hsl(250, 100%, 95%);
+    border-radius: 5px;
+    box-shadow: 4px 4px hsl(26, 70%, 50%);
+    padding: 8px;
+}
+
+.section-header-two {
+    grid-area: header;
+}
+
+/* Score section */
+
+#score-section {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "playerScore computerScore";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 8px;
+}
+
+#player-score {
+    grid-area: playerScore;
+}
+
+#computer-score {
+    grid-area: computerScore;
+}
+
+/* Game area */
+
+#game-section {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "playerHand betweenHands computerHand";
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr 3fr;
+    padding-bottom: 8px;
+    row-gap: 8px;
+}
+
+#player-hand,
+#between-hands,
+#computer-hand {
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 8px;
+}
+
+.game-hand {
+    display: block;
+    font-size: 4rem;
+    line-height: 1.3;
+    padding: 6px 10px 12px 10px;
+}
+
+.winner-hand-anim {
+    animation: markWinner 200ms ease-out forwards;
+}
+
+.lost-hand-anim {
+    animation: markLost 200ms ease-out forwards;
+}
+
+.draw-hand-anim {
+    animation: markDraw 200ms ease-out forwards;
+}
+
+.player-hand-end-transform {
+    transform: rotate(90deg) scaleX(-1);
+}
+
+.computer-hand-end-transform {
+    transform: rotate(90deg) scale(-1, -1);
+}
+
+.player-hand-scissors-end-transform {
+    transform: rotate(90deg);
+}
+
+.computer-hand-scissors-end-transform {
+    transform: rotate(90deg) scaleY(-1);
+}
+
+#player-hand {
+    grid-area: playerHand;
+}
+
+.player-hand-transform {
+    transform: rotate(90deg);
+}
+
+#between-hands {
+    font-size: 2rem;
+    grid-area: betweenHands;
+    text-transform: uppercase;
+}
+
+#computer-hand {
+    grid-area: computerHand;
+}
+
+.computer-hand-transform {
+    transform: scaleX(-1) rotate(90deg);
+}
+
+.player-hand-wiggle-anim {
+    animation: leftHandWaggle 400ms linear 2;
+}
+
+.computer-hand-wiggle-anim {
+    animation: rightHandWaggle 400ms linear 2;
+}
+
+.player-shape-anim {
+    animation: showPlayerHandShape 400ms ease-in-out;
+    transform: rotate(-90deg) scaleY(-1);
+}
+
+.computer-shape-anim {
+    animation: showComputerHandShape 400ms ease-in-out;
+    transform: rotate(-90deg);
+}
+
+.player-shape-scissors-anim {
+    animation: showPlayerHandScissors 400ms ease-in-out;
+    transform: rotate(90deg);
+}
+
+.computer-shape-scissors-anim {
+    animation: showComputerHandScissors 400ms ease-in-out;
+    transform: rotate(90deg) scaleY(-1);
+}
+
+@media only screen and (min-width: 435px) {
+    #score-section,
+    #game-section,
+    #moves-section {
+        padding: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #score-section,
+    #game-section,
+    #moves-section {
+        padding: 16px;
+    }
+}
+
+
+/* 5. Animations */
+
+@keyframes markWinner {
+    from {
+        text-shadow: none;
+    }
+    to {
+        text-shadow: 0 0 20px hsl(119, 80%, 50%);
+    }
+}
+
+@keyframes markLost {
+    from {
+        text-shadow: none;
+    }
+    to {
+        text-shadow: 0 0 20px hsl(0, 80%, 50%);
+    }
+}
+
+@keyframes markDraw {
+    from {
+        text-shadow: none;
+    }
+    to {
+        text-shadow: 0 0 20px hsl(51, 80%, 50%);
+    }
+}
+
+@keyframes leftHandWaggle {
+    from {
+        transform: translateY(0) rotate(90deg);
+    }
+    25% {
+        transform: translateY(10px) rotate(90deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(90deg);
+    }
+    to {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@keyframes rightHandWaggle {
+    from {
+        transform: translateY(0) scaleX(-1) rotate(90deg);
+    }
+    25% {
+        transform: translateY(10px) scaleX(-1) rotate(90deg);
+    }
+    75% {
+        transform: translateY(-10px) scaleX(-1) rotate(90deg);
+    }
+    to {
+        transform: translateY(0) scaleX(-1) rotate(90deg);
+    }
+}
+
+@keyframes showPlayerHandShape {
+    from {
+        transform: scale(1) rotate(-90deg) scaleY(-1);
+    }
+    50% {
+        transform: scale(1.3) rotate(-90deg) scaleY(-1);
+    }
+    to {
+        transform: scale(1) rotate(-90deg) scaleY(-1);
+    }
+}
+
+@keyframes showComputerHandShape {
+    from {
+        transform: scale(1) rotate(-90deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(-90deg);
+    }
+    to {
+        transform: scale(1) rotate(-90deg);
+    }
+}
+
+@keyframes showPlayerHandScissors {
+    from {
+        transform: scale(1) rotate(90deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(90deg);
+    }
+    to {
+        transform: scale(1) rotate(90deg);
+    }
+}
+
+@keyframes showComputerHandScissors {
+    from {
+        transform: scale(1) rotate(90deg) scaleY(-1);
+    }
+    50% {
+        transform: scale(1.3) rotate(90deg) scaleY(-1);
+    }
+    to {
+        transform: scale(1) rotate(90deg) scaleY(-1);
+    }
+}
