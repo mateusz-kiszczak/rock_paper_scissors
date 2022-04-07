@@ -56,12 +56,10 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 const disableButtons = () => {
-  // For each button set new attribute - "disabled".
   playerButtons.forEach(element => element.setAttribute('disabled', ''));
 };
 
 const enableButtons = () => {
-  	// For each button, if it has "disabled" attribute, remove the "disabled" attribute.
   	playerButtons.forEach(element => element.removeAttribute('disabled'));
 };
 

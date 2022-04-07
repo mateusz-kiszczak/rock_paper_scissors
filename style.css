@@ -242,7 +242,7 @@ main {
 }
 
 .player-hand-transform {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 #between-hands {
@@ -256,7 +256,7 @@ main {
 }
 
 .computer-hand-transform {
-    transform: scaleX(-1) rotate(90deg);
+    transform: scaleX(-1) rotate(-90deg);
 }
 
 .player-hand-wiggle-anim {
@@ -335,31 +335,31 @@ main {
 
 @keyframes leftHandWaggle {
     from {
-        transform: translateY(0) rotate(90deg);
+        transform: translateY(0) rotate(-90deg);
     }
     25% {
-        transform: translateY(10px) rotate(90deg);
+        transform: translateY(10px) rotate(-90deg);
     }
     75% {
-        transform: translateY(-10px) rotate(90deg);
+        transform: translateY(-10px) rotate(-90deg);
     }
     to {
-        transform: translateY(0) rotate(90deg);
+        transform: translateY(0) rotate(-90deg);
     }
 }
 
 @keyframes rightHandWaggle {
     from {
-        transform: translateY(0) scaleX(-1) rotate(90deg);
+        transform: translateY(0) scaleX(-1) rotate(-90deg);
     }
     25% {
-        transform: translateY(10px) scaleX(-1) rotate(90deg);
+        transform: translateY(10px) scaleX(-1) rotate(-90deg);
     }
     75% {
-        transform: translateY(-10px) scaleX(-1) rotate(90deg);
+        transform: translateY(-10px) scaleX(-1) rotate(-90deg);
     }
     to {
-        transform: translateY(0) scaleX(-1) rotate(90deg);
+        transform: translateY(0) scaleX(-1) rotate(-90deg);
     }
 }
 

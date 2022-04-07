@@ -2,7 +2,7 @@
 
 Play the well known Rock Paper Scissors game together with a computer opponent. Enjoy the simple design along with some animations.
 
-![Rock Paper Scissors App Screenshot](https://small-projects.s3.eu-west-2.amazonaws.com/rock_paper_scissors/capture.jpg)
+![Rock Paper Scissors App Screenshot](https://small-projects.s3.eu-west-2.amazonaws.com/rockPaperScissors/capture.jpg)
 
 ---
 
@@ -10,21 +10,22 @@ Play the well known Rock Paper Scissors game together with a computer opponent. 
 
 ### HTML5
 
-* Semantic elements
+* HTML Emoji
 
 ### CSS3
 
 * Animations
 * Grid structure
-* Media queries
 * HSL colours
+* Media queries
 * Pseudo-elements
 * Transitions
 
 ### JavaScript (ES6 and above)
 
-* Functions
 * Event listeners
+* Functions
+* Statements
 
 ### Design
 
@@ -35,7 +36,7 @@ Play the well known Rock Paper Scissors game together with a computer opponent. 
 
 ## Live example
 
-[Rock Paper Scissors LIVE](https://small-projects.s3.eu-west-2.amazonaws.com/rock_paper_scissors/index.html)
+[Rock Paper Scissors LIVE](https://small-projects.s3.eu-west-2.amazonaws.com/rockPaperScissors/index.html)
 
 ---
 
